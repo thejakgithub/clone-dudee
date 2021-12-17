@@ -52,7 +52,11 @@
     <Carousel class="lg:hidden bg-white pt-4 pb-3">
       <Slide v-for="slide in items" :key="slide">
         <div class="carousel__item">
-          <img :src="`@/assets/img/${slide}`" class="h-[140px]" :alt="slide" />
+          <img
+            :src="`/src/assets/img/${slide}`"
+            class="h-[140px]"
+            :alt="slide"
+          />
         </div>
       </Slide>
 

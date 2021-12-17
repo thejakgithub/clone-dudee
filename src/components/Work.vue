@@ -142,7 +142,7 @@
     <Slide v-for="slide in items" :key="slide">
       <div class="carousel__item">
         <img
-          :src="`../assets/img/${slide}`"
+          :src="`/src/assets/img/${slide}`"
           class="object-cover h-[275px] max-w-full w-screen"
           :alt="slide"
         />
