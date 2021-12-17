@@ -67,6 +67,8 @@
             class="h-[140px]"
           />
         </div>
+      </Slide>
+      <Slide :key="slide">
         <div class="carousel__item">
           <img
             src="../assets/img/mee_sha.jpeg"
@@ -74,6 +76,8 @@
             class="h-[140px]"
           />
         </div>
+      </Slide>
+      <Slide :key="slide">
         <div class="carousel__item">
           <img
             src="../assets/img/sponser_blank_studio.jpeg"
@@ -81,6 +85,8 @@
             class="h-[140px]"
           />
         </div>
+      </Slide>
+      <Slide :key="slide">
         <div class="carousel__item">
           <img src="../assets/img/somtum.png" alt="somtum" class="h-[140px]" />
         </div>
