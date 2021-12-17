@@ -23,6 +23,7 @@
         >
           <img
             src="../assets/img/sponser_1.jpeg"
+            class="z-10"
             height="140"
             width="140"
             alt="sponser_1"
@@ -30,6 +31,7 @@
           <img
             src="../assets/img/mee_sha.jpeg"
             alt="mee_sha"
+            class="z-10"
             height="140"
             width="140"
           />
@@ -37,18 +39,22 @@
             src="../assets/img/sponser_blank_studio.jpeg"
             alt="sponser_blank_studio"
             height="140"
+            class="z-10"
             width="140"
           />
           <img
             src="../assets/img/somtum.png"
             alt="somtum"
             height="140"
+            class="z-10"
             width="140"
           />
         </div>
       </div>
     </div>
-    <div class="hidden bg-white"></div>
+    <div
+      class="bg-white w-full absolute lg:h-[130px] z-0 -translate-y-[130px]"
+    ></div>
     <Carousel class="lg:hidden bg-white pt-4 pb-3">
       <!-- <Slide v-for="slide in items" :key="slide">
         <div class="carousel__item">
