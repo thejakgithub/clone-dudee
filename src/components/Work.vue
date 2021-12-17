@@ -139,12 +139,66 @@
     :items-to-show="1"
     class="lg:hidden inline-block"
   >
-    <Slide v-for="slide in items" :key="slide">
+    <!-- <Slide v-for="slide in items" :key="slide">
       <div class="carousel__item">
         <img
-          :src="`/src/assets/img/${slide}`"
+          :src="`../assets/img/${slide}`"
           class="object-cover h-[275px] max-w-full w-screen"
           :alt="slide"
+        />
+      </div>
+    </Slide> -->
+    <Slide :key="slide">
+      <div class="carousel__item">
+        <img
+          src="../assets/img/pos.jpeg"
+          alt="pos"
+          class="object-cover h-[275px] max-w-full w-screen"
+        />
+      </div>
+    </Slide>
+    <Slide :key="slide">
+      <div class="carousel__item">
+        <img
+          src="../assets/img/blank_studio.jpeg"
+          alt="blank_studio"
+          class="object-cover h-[275px] max-w-full w-screen"
+        />
+      </div>
+    </Slide>
+    <Slide :key="slide">
+      <div class="carousel__item">
+        <img
+          src="../assets/img/department.jpeg"
+          alt="department"
+          class="object-cover h-[275px] max-w-full w-screen"
+        />
+      </div>
+    </Slide>
+    <Slide :key="slide">
+      <div class="carousel__item">
+        <img
+          src="../assets/img/glasses_store.jpeg"
+          alt="glasses_store"
+          class="object-cover h-[275px] max-w-full w-screen"
+        />
+      </div>
+    </Slide>
+    <Slide :key="slide">
+      <div class="carousel__item">
+        <img
+          src="../assets/img/hatyai_branch.jpeg"
+          alt="hatyai_branch"
+          class="object-cover h-[275px] max-w-full w-screen"
+        />
+      </div>
+    </Slide>
+    <Slide :key="slide">
+      <div class="carousel__item">
+        <img
+          src="../assets/img/is_am_are.jpeg"
+          alt="is_am_are"
+          class="object-cover h-[275px] max-w-full w-screen"
         />
       </div>
     </Slide>
