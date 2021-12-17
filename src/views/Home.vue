@@ -10,9 +10,8 @@
 <script>
 import Header from "../components/Header.vue";
 import OurService from "../components/OurService.vue";
-import Work from "./Work.vue";
+import Work from "../components/Work.vue";
 import OurClient from "../components/OurClient.vue";
-import Footer from "../components/Footer.vue";
 
 export default {
   name: "Home",
@@ -21,7 +20,6 @@ export default {
     OurService,
     Work,
     OurClient,
-    Footer,
   },
 };
 </script>

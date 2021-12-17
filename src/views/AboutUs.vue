@@ -1,8 +1,14 @@
-<template><h1>About Us</h1></template>
+<template>
+  <OurService />
+</template>
 
 <script>
+import OurService from "../components/OurService.vue";
 export default {
   name: "AboutUs",
+  components: {
+    OurService,
+  },
 };
 </script>
 
