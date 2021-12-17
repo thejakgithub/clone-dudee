@@ -50,13 +50,39 @@
     </div>
     <div class="hidden bg-white"></div>
     <Carousel class="lg:hidden bg-white pt-4 pb-3">
-      <Slide v-for="slide in items" :key="slide">
+      <!-- <Slide v-for="slide in items" :key="slide">
         <div class="carousel__item">
           <img
             :src="`/src/assets/img/${slide}`"
             class="h-[140px]"
             :alt="slide"
           />
+        </div>
+      </Slide> -->
+      <Slide :key="slide">
+        <div class="carousel__item">
+          <img
+            src="../assets/img/sponser_1.jpeg"
+            alt="sponser_1"
+            class="h-[140px]"
+          />
+        </div>
+        <div class="carousel__item">
+          <img
+            src="../assets/img/mee_sha.jpeg"
+            alt="mee_sha"
+            class="h-[140px]"
+          />
+        </div>
+        <div class="carousel__item">
+          <img
+            src="../assets/img/sponser_blank_studio.jpeg"
+            alt="sponser_blank_studio"
+            class="h-[140px]"
+          />
+        </div>
+        <div class="carousel__item">
+          <img src="../assets/img/somtum.png" alt="somtum" class="h-[140px]" />
         </div>
       </Slide>
 
