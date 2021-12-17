@@ -1,0 +1,51 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\User\.node\corepack\yarn\1.22.15\bin\yarn.js add vue-slick-carousel
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Users\User\.jdks\openjdk-17.0.1\bin;C:\Users\User\Downloads\apache-maven-3.8.4\bin;C:\Users\User\Downloads\gradle-7.3\bin;C:\Program Files\Git\cmd;C:\Users\User\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\User\AppData\Local\Programs\Python\Python310\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;;C:\Users\User\AppData\Roaming\npm;C:\Program Files\heroku\bin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\Vue\dudee\node_modules\esbuild-windows-64\esbuild.exe'
+
+npm manifest: 
+  {
+    "name": "dudee",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview"
+    },
+    "dependencies": {
+      "@fortawesome/fontawesome-svg-core": "^1.2.36",
+      "@fortawesome/free-solid-svg-icons": "^5.15.4",
+      "@fortawesome/vue-fontawesome": "^3.0.0-5",
+      "tailwind-scrollbar-hide": "^1.1.6",
+      "vue": "^3.2.25",
+      "vue-router": "^4.0.12",
+      "vue-slick-carousel": "^1.0.6"
+    },
+    "devDependencies": {
+      "@vitejs/plugin-vue": "^2.0.0",
+      "@vue/cli-plugin-router": "~4.5.0",
+      "autoprefixer": "^10.4.0",
+      "postcss": "^8.4.5",
+      "tailwindcss": "^3.0.1",
+      "vite": "^2.7.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

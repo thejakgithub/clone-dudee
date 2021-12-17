@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap&family=Maven+Pro&family=Noto+Sans+Thai&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: "Asap", "Noto Sans Thai", sans-serif;
+  line-height: 1.5;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: #eeee;
+  color: #000000de;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+/* h1,
+h2,
+h3 {
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+} */
+
+::-webkit-scrollbar {
+  display: none;
+}
