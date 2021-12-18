@@ -19,6 +19,7 @@ module.exports = {
         "header-contact": "url('/src/assets/img/header-contact.jpeg')",
         "header-job": "url('/src/assets/img/header-job.jpeg')",
         "header-blog": "url('/src/assets/img/header-blog.jpg')",
+        "header-work": "url('/src/assets/img/header-work.jpeg')",
       },
     },
   },

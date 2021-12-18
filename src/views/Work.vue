@@ -1,6 +1,6 @@
 <template>
-  <main class="h-screen bg-white">
-    <div class="bg-header-blog bg-cover h-[490px]">
+  <main class="h-[197rem] bg-white">
+    <div class="bg-header-work bg-cover h-[490px]">
       <div class="bg-black/40 h-[490px]">
         <main class="mx-auto xl:max-w-7xl lg:max-w-5xl font-maven-pro">
           <div class="lg:px-12 px-4">
@@ -14,13 +14,72 @@
                 เรายินดีให้คำแนะนำ และแก้ปัญหาของท่าน
                 เราภูมิใจและยินดีที่ได้เป็นส่วนหนึ่งของการเติบโตของท่าน
               </p>
-              <nav class="flex mt-10 text-2xl">
-                <div class="mr-6">WEB</div>
-                <div class="mr-6">MOBILE APP</div>
-                <div class="mr-6">INTERNAL SYSTEMS</div>
-                <div class="mr-6">IN HOUSE</div>
-                <div class="mr-6">BRANDING</div>
+              <nav class="flex mt-10 mb-8 text-2xl">
+                <div v-for="val in navWork" :key="val.id" class="mr-6">
+                  <span
+                    class="cursor-pointer"
+                    @click="navWorkClicked(val.id)"
+                    :class="{ active: navWork[val.id - 1].isActive }"
+                    >{{ val.name }}</span
+                  >
+                </div>
               </nav>
+
+              <div v-if="type === 'WEB'">
+                <div class="grid grid-cols-2 gap-8 px-1">
+                  <div v-for="img in imgWeb" :key="img.id">
+                    <img
+                      :src="img.url"
+                      :alt="img.name"
+                      class="w-full h-[344px] object-cover rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="type === 'MOBILE APP'">
+                <div class="grid grid-cols-2 gap-8 px-1">
+                  <div v-for="img in imgMobile" :key="img.id">
+                    <img
+                      :src="img.url"
+                      :alt="img.name"
+                      class="w-full h-[344px] object-cover rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="type === 'INTERNAL SYSTEMS'">
+                <div class="grid grid-cols-2 gap-8 px-1">
+                  <div v-for="img in imgInternal" :key="img.id">
+                    <img
+                      :src="img.url"
+                      :alt="img.name"
+                      class="w-full h-[344px] object-cover rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="type === 'IN HOUSE'">
+                <div class="grid grid-cols-2 gap-8 px-1">
+                  <div v-for="img in imgInHouse" :key="img.id">
+                    <img
+                      :src="img.url"
+                      :alt="img.name"
+                      class="w-full h-[344px] object-cover rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="type === 'BRANDING'">
+                <div class="grid grid-cols-2 gap-8 px-1">
+                  <div v-for="img in imgBranding" :key="img.id">
+                    <img
+                      :src="img.url"
+                      :alt="img.name"
+                      class="w-full h-[344px] object-cover rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </main>
@@ -33,8 +92,170 @@
 export default {
   name: "Work",
   components: {},
+  data() {
+    return {
+      type: "WEB",
+      navWork: [
+        {
+          id: 1,
+          name: "WEB",
+          isActive: true,
+        },
+        {
+          id: 2,
+          name: "MOBILE APP",
+          isActive: false,
+        },
+        {
+          id: 3,
+          name: "INTERNAL SYSTEMS",
+          isActive: false,
+        },
+        {
+          id: 4,
+          name: "IN HOUSE",
+          isActive: false,
+        },
+        {
+          id: 5,
+          name: "BRANDING",
+          isActive: false,
+        },
+      ],
+      imgWeb: [
+        {
+          id: 1,
+          name: "POS",
+          url: "src/assets/img/pos.jpeg",
+        },
+        {
+          id: 2,
+          name: "BLANK STUDIO",
+          url: "src/assets/img/blank_studio.jpeg",
+        },
+        {
+          id: 3,
+          name: "DEPARTMENT OF CONSULAR AFFAIRS",
+          url: "src/assets/img/department.jpeg",
+        },
+        {
+          id: 4,
+          name: "CLICK GLASSES STORE",
+          url: "src/assets/img/glasses_store.jpeg",
+        },
+        {
+          id: 5,
+          name: "BEST INC. HATYAI BRANCH",
+          url: "src/assets/img/hatyai_branch.jpeg",
+        },
+        {
+          id: 6,
+          name: "IS AM ARE ACADEMY",
+          url: "src/assets/img/is_am_are.jpeg",
+        },
+        {
+          id: 7,
+          name: "WONDERWALL HOTEL",
+          url: "src/assets/img/wonderwall_hotel.jpeg",
+        },
+        {
+          id: 8,
+          name: "MY SPA BOOKING",
+          url: "src/assets/img/my_spa_booking.jpeg",
+        },
+        {
+          id: 9,
+          name: "ROOJAI",
+          url: "src/assets/img/roojai.jpeg",
+        },
+        {
+          id: 10,
+          name: "OMISE",
+          url: "src/assets/img/omise.png",
+        },
+        {
+          id: 11,
+          name: "POMBALL STUDIO",
+          url: "src/assets/img/pommball_studio.jpeg",
+        },
+        {
+          id: 12,
+          name: "SO:ME",
+          url: "src/assets/img/some.png",
+        },
+        {
+          id: 13,
+          name: "BACK PACK",
+          url: "src/assets/img/backpack.jpeg",
+        },
+        {
+          id: 14,
+          name: "SANDY PURE & CLEAN",
+          url: "src/assets/img/sandy_pure.jpeg",
+        },
+      ],
+      imgMobile: [
+        {
+          id: 1,
+          name: "DONATE-MI",
+          url: "src/assets/img/donate_mi.jpeg",
+        },
+        {
+          id: 2,
+          name: "ANGRY TEACHER",
+          url: "src/assets/img/angry_teacher.jpeg",
+        },
+        {
+          id: 3,
+          name: "OK INFINITY",
+          url: "src/assets/img/ok_infinity.jpeg",
+        },
+      ],
+      imgInternal: [
+        {
+          id: 1,
+          name: "POS",
+          url: "src/assets/img/pos.jpeg",
+        },
+        {
+          id: 2,
+          name: "BEST INC. HATYAI BRANCH",
+          url: "src/assets/img/hatyai_branch.jpeg",
+        },
+      ],
+      imgInHouse: [
+        {
+          id: 1,
+          name: "POS",
+          url: "src/assets/img/pos.jpeg",
+        },
+      ],
+      imgBranding: [
+        {
+          id: 1,
+          name: "IS AM ARE ACADEMY",
+          url: "src/assets/img/is_am_are.jpeg",
+        },
+      ],
+    };
+  },
+  methods: {
+    navWorkClicked(id) {
+      this.navWork.forEach((val) => {
+        if (id === val.id) {
+          val.isActive = true;
+          this.type = val.name;
+        } else {
+          val.isActive = false;
+        }
+      });
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped >
+.active {
+  color: #8ad0c5;
+}
 </style>
