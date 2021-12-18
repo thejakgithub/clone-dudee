@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import AboutUs from "../views/AboutUs.vue";
 import Blog from "../views/Blog.vue";
-import Work from "../components/Work.vue";
+import Work from "../views/Work.vue";
 import JobAndIntern from "../views/JobAndIntern.vue";
 import Contact from "../views/Contact.vue";
 

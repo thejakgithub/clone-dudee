@@ -2,7 +2,7 @@
   <div>
     <Header />
     <OurService />
-    <Work />
+    <Works />
     <OurClient />
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 import Header from "../components/Header.vue";
 import OurService from "../components/OurService.vue";
-import Work from "../components/Work.vue";
+import Works from "../components/Works.vue";
 import OurClient from "../components/OurClient.vue";
 
 export default {
@@ -18,7 +18,7 @@ export default {
   components: {
     Header,
     OurService,
-    Work,
+    Works,
     OurClient,
   },
 };

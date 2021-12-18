@@ -37,7 +37,7 @@
             href="https://web.facebook.com/dudeeindeed?_rdc=1&_rdr"
             target="_blank"
           >
-            <font-awesome-icon
+            <Font-awesome-icon
               :icon="['fab', 'facebook-f']"
               class="text-2xl cursor-pointer mb-2"
           /></a>
