@@ -3,7 +3,7 @@
     <div class="bg-header-blog bg-cover lg:h-[490px] h-[220px]">
       <div class="bg-black/40 lg:h-[490px] h-[220px]">
         <main class="mx-auto xl:max-w-7xl lg:max-w-5xl font-maven-pro">
-          <div class="lg:px-10">
+          <div class="lg:px-12">
             <h1
               class="
                 lg:text-7xl

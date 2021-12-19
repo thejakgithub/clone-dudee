@@ -2,8 +2,8 @@
   <main
     class="xl:h-screen h-full mx-auto xl:max-w-7xl lg:max-w-5xl font-maven-pro"
   >
-    <div class="lg:px-16 px-4 lg:my-40 py-6">
-      <h1 class="lg:text-7xl text-4xl font-bold">Our Service</h1>
+    <div class="lg:px-16 px-4 lg:my-40 my-12">
+      <h1 class="lg:text-7xl text-[2rem] font-bold">Our Service</h1>
       <div>
         <Carousel
           :settings="settings"
@@ -12,7 +12,7 @@
           :autoplay="3000"
           :transition="1000"
           :mouse-drag="false"
-          class="pointer-events-none select-none mt-24"
+          class="pointer-events-none select-none lg:mt-24 mt-10"
         >
           <Slide :key="slide">
             <div class="carousel__item">

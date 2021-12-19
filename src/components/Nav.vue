@@ -21,41 +21,43 @@
                 text-dudee-green
                 cursor-pointer
               "
+              @click="navClicked"
             />
           </div>
           <div class="text-white md:flex md:items-center hidden">
             <router-link
-              to="/"
+              v-for="val in navLink"
+              :key="val.id"
+              :to="val.link"
               class="px-4 py-3 hover:bg-black hover:bg-opacity-5 hover:rounded"
-              >Home</router-link
-            >
-            <router-link
-              to="/aboutus"
-              class="px-4 py-3 hover:bg-black hover:bg-opacity-5 hover:rounded"
-              >About Us</router-link
-            >
-            <router-link
-              to="/work"
-              class="px-4 py-3 hover:bg-black hover:bg-opacity-5 hover:rounded"
-              >Works</router-link
-            >
-            <router-link
-              to="/blog"
-              class="px-4 py-3 hover:bg-black hover:bg-opacity-5 hover:rounded"
-              >Blog</router-link
-            >
-            <router-link
-              to="/jobandintern"
-              class="px-4 py-3 hover:bg-black hover:bg-opacity-5 hover:rounded"
-              >Job & Intern</router-link
-            >
-            <router-link
-              to="/contact"
-              class="px-4 py-3 hover:bg-black hover:bg-opacity-5 hover:rounded"
-              >Contact</router-link
+              >{{ val.name }}</router-link
             >
           </div>
         </div>
+      </div>
+    </div>
+    <div
+      :class="{ nav_menu: navIsActive, nav_hidden: !navIsActive }"
+      class="md:hidden"
+    >
+      <div
+        class="
+          flex flex-col
+          justify-center
+          items-center
+          text-center text-dudee-green
+        "
+      >
+        <router-link
+          v-for="val in navLink"
+          :key="val.id"
+          :to="val.link"
+          @click="linkClicked(val.id)"
+          class="p-5 w-full my-2"
+          :class="{ active: val.isActive }"
+        >
+          <span>{{ val.name }}</span>
+        </router-link>
       </div>
     </div>
   </nav>
@@ -73,8 +75,79 @@ export default {
   components: {
     FontAwesomeIcon,
   },
+  data() {
+    return {
+      navIsActive: false,
+      navLink: [
+        {
+          id: 1,
+          name: "Home",
+          isActive: true,
+          link: "/",
+        },
+        {
+          id: 2,
+          name: "About Us",
+          isActive: false,
+          link: "/aboutUs",
+        },
+        {
+          id: 3,
+          name: "Work",
+          isActive: false,
+          link: "/work",
+        },
+        {
+          id: 4,
+          name: "Blog",
+          isActive: false,
+          link: "/blog",
+        },
+        {
+          id: 5,
+          name: "Job & Intern",
+          isActive: false,
+          link: "/jobAndIntern",
+        },
+        {
+          id: 6,
+          name: "Contact",
+          isActive: false,
+          link: "/contact",
+        },
+      ],
+    };
+  },
+  methods: {
+    navClicked() {
+      this.navIsActive = !this.navIsActive;
+    },
+    linkClicked(id) {
+      this.navLink.forEach((val) => {
+        if (id === val.id) {
+          val.isActive = true;
+          this.navIsActive = false;
+        } else {
+          val.isActive = false;
+        }
+      });
+    },
+  },
 };
-</script>
+</script >
 
-<style>
+<style scoped>
+.nav_menu {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+.nav_hidden {
+  display: none;
+}
+
+.active {
+  background: #ffffffb3;
+  color: #000;
+}
 </style>

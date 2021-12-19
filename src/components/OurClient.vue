@@ -22,32 +22,13 @@
           "
         >
           <img
-            src="../assets/img/sponser_1.jpeg"
+            v-for="img in items"
+            :key="img.id"
+            :src="getImageUrl(img)"
             class="z-10"
             height="140"
             width="140"
-            alt="sponser_1"
-          />
-          <img
-            src="../assets/img/mee_sha.jpeg"
-            alt="mee_sha"
-            class="z-10"
-            height="140"
-            width="140"
-          />
-          <img
-            src="../assets/img/sponser_blank_studio.jpeg"
-            alt="sponser_blank_studio"
-            height="140"
-            class="z-10"
-            width="140"
-          />
-          <img
-            src="../assets/img/somtum.png"
-            alt="somtum"
-            height="140"
-            class="z-10"
-            width="140"
+            :alt="img"
           />
         </div>
       </div>
@@ -55,46 +36,10 @@
     <div
       class="bg-white w-full absolute lg:h-[130px] z-0 -translate-y-[130px]"
     ></div>
-    <Carousel class="lg:hidden bg-white pt-4 pb-3">
-      <!-- <Slide v-for="slide in items" :key="slide">
+    <Carousel class="lg:hidden bg-white pt-4 pb-3" :autoplay="4000">
+      <Slide v-for="slide in items" :key="slide">
         <div class="carousel__item">
-          <img
-            :src="`/src/assets/img/${slide}`"
-            class="h-[140px]"
-            :alt="slide"
-          />
-        </div>
-      </Slide> -->
-      <Slide :key="slide">
-        <div class="carousel__item">
-          <img
-            src="../assets/img/sponser_1.jpeg"
-            alt="sponser_1"
-            class="h-[140px]"
-          />
-        </div>
-      </Slide>
-      <Slide :key="slide">
-        <div class="carousel__item">
-          <img
-            src="../assets/img/mee_sha.jpeg"
-            alt="mee_sha"
-            class="h-[140px]"
-          />
-        </div>
-      </Slide>
-      <Slide :key="slide">
-        <div class="carousel__item">
-          <img
-            src="../assets/img/sponser_blank_studio.jpeg"
-            alt="sponser_blank_studio"
-            class="h-[140px]"
-          />
-        </div>
-      </Slide>
-      <Slide :key="slide">
-        <div class="carousel__item">
-          <img src="../assets/img/somtum.png" alt="somtum" class="h-[140px]" />
+          <img :src="getImageUrl(slide)" class="h-[140px]" :alt="slide" />
         </div>
       </Slide>
 
@@ -106,7 +51,7 @@
 </template>
 
 <script>
-import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import { Carousel, Navigation, Slide } from "vue3-carousel";
 
 import "vue3-carousel/dist/carousel.css";
 export default {
@@ -114,7 +59,6 @@ export default {
   components: {
     Carousel,
     Slide,
-    Pagination,
     Navigation,
   },
   data() {
@@ -126,6 +70,11 @@ export default {
         "somtum.png",
       ],
     };
+  },
+  methods: {
+    getImageUrl(name) {
+      return new URL(`../assets/img/${name}`, import.meta.url).href;
+    },
   },
 };
 </script>
