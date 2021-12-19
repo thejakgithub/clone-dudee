@@ -140,6 +140,7 @@ export default {
 .nav_menu {
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
+  overflow-y: scroll;
   z-index: 10;
 }
 .nav_hidden {
