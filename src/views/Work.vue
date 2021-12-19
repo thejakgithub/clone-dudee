@@ -72,7 +72,7 @@
                 >
                   <div v-for="img in imgMobile" :key="img.id">
                     <img
-                      :src="img.url"
+                      :src="getImageUrl(img.url)"
                       :alt="img.name"
                       class="w-full h-[344px] object-cover rounded-2xl"
                     />
@@ -85,7 +85,7 @@
                 >
                   <div v-for="img in imgInternal" :key="img.id">
                     <img
-                      :src="img.url"
+                      :src="getImageUrl(img.url)"
                       :alt="img.name"
                       class="w-full h-[344px] object-cover rounded-2xl"
                     />
@@ -98,7 +98,7 @@
                 >
                   <div v-for="img in imgInHouse" :key="img.id">
                     <img
-                      :src="img.url"
+                      :src="getImageUrl(img.url)"
                       :alt="img.name"
                       class="w-full h-[344px] object-cover rounded-2xl"
                     />
@@ -111,7 +111,7 @@
                 >
                   <div v-for="img in imgBranding" :key="img.id">
                     <img
-                      :src="img.url"
+                      :src="getImageUrl(img.url)"
                       :alt="img.name"
                       class="w-full h-[344px] object-cover rounded-2xl"
                     />
