@@ -53,7 +53,7 @@
                 >
                   <div v-for="img in imgWeb" :key="img.id">
                     <img
-                      :src="img.url"
+                      :src="getImageUrl(img.url)"
                       :alt="img.name"
                       class="
                         w-full
@@ -164,115 +164,115 @@ export default {
         {
           id: 1,
           name: "POS",
-          url: "/src/assets/img/pos.jpeg",
+          url: "pos.jpeg",
         },
         {
           id: 2,
           name: "BLANK STUDIO",
-          url: "/src/assets/img/blank_studio.jpeg",
+          url: "blank_studio.jpeg",
         },
         {
           id: 3,
           name: "DEPARTMENT OF CONSULAR AFFAIRS",
-          url: "/src/assets/img/department.jpeg",
+          url: "department.jpeg",
         },
         {
           id: 4,
           name: "CLICK GLASSES STORE",
-          url: "/src/assets/img/glasses_store.jpeg",
+          url: "glasses_store.jpeg",
         },
         {
           id: 5,
           name: "BEST INC. HATYAI BRANCH",
-          url: "/src/assets/img/hatyai_branch.jpeg",
+          url: "hatyai_branch.jpeg",
         },
         {
           id: 6,
           name: "IS AM ARE ACADEMY",
-          url: "/src/assets/img/is_am_are.jpeg",
+          url: "is_am_are.jpeg",
         },
         {
           id: 7,
           name: "WONDERWALL HOTEL",
-          url: "/assets/img/wonderwall_hotel.jpeg",
+          url: "wonderwall_hotel.jpeg",
         },
         {
           id: 8,
           name: "MY SPA BOOKING",
-          url: "/src/assets/img/my_spa_booking.jpeg",
+          url: "my_spa_booking.jpeg",
         },
         {
           id: 9,
           name: "ROOJAI",
-          url: "/src/assets/img/roojai.jpeg",
+          url: "roojai.jpeg",
         },
         {
           id: 10,
           name: "OMISE",
-          url: "/src/assets/img/omise.png",
+          url: "omise.png",
         },
         {
           id: 11,
           name: "POMBALL STUDIO",
-          url: "/src/assets/img/pommball_studio.jpeg",
+          url: "pommball_studio.jpeg",
         },
         {
           id: 12,
           name: "SO:ME",
-          url: "/src/assets/img/some.png",
+          url: "some.png",
         },
         {
           id: 13,
           name: "BACK PACK",
-          url: "/src/assets/img/backpack.jpeg",
+          url: "backpack.jpeg",
         },
         {
           id: 14,
           name: "SANDY PURE & CLEAN",
-          url: "/src/assets/img/sandy_pure.jpeg",
+          url: "sandy_pure.jpeg",
         },
       ],
       imgMobile: [
         {
           id: 1,
           name: "DONATE-MI",
-          url: "/src/assets/img/donate_mi.jpeg",
+          url: "donate_mi.jpeg",
         },
         {
           id: 2,
           name: "ANGRY TEACHER",
-          url: "/src/assets/img/angry_teacher.jpeg",
+          url: "angry_teacher.jpeg",
         },
         {
           id: 3,
           name: "OK INFINITY",
-          url: "/src/assets/img/ok_infinity.jpeg",
+          url: "ok_infinity.jpeg",
         },
       ],
       imgInternal: [
         {
           id: 1,
           name: "POS",
-          url: "/src/assets/img/pos.jpeg",
+          url: "pos.jpeg",
         },
         {
           id: 2,
           name: "BEST INC. HATYAI BRANCH",
-          url: "/src/assets/img/hatyai_branch.jpeg",
+          url: "hatyai_branch.jpeg",
         },
       ],
       imgInHouse: [
         {
           id: 1,
           name: "POS",
-          url: "/src/assets/img/pos.jpeg",
+          url: "pos.jpeg",
         },
       ],
       imgBranding: [
         {
           id: 1,
           name: "IS AM ARE ACADEMY",
-          url: "/src/assets/img/is_am_are.jpeg",
+          url: "is_am_are.jpeg",
         },
       ],
     };
@@ -287,6 +287,9 @@ export default {
           val.isActive = false;
         }
       });
+    },
+    getImageUrl(name) {
+      return new URL(`../assets/img/${name}`, import.meta.url).href;
     },
   },
 };
