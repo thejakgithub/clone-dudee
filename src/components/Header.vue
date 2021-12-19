@@ -35,6 +35,7 @@
             consulting and technology solution.
           </p>
           <button
+            @click="whatWeDoClicked"
             class="
               text-white
               border-none
@@ -65,6 +66,14 @@
 <script>
 export default {
   name: "Header",
+  methods: {
+    whatWeDoClicked() {
+      window.scroll({
+        top: window.innerHeight,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 
