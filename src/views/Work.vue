@@ -1,12 +1,22 @@
 <template>
-  <main class="h-[197rem] bg-white">
-    <div class="bg-header-work bg-cover h-[490px]">
-      <div class="bg-black/40 h-[490px]">
+  <div class="lg:h-[197rem] h-[179rem] bg-white">
+    <div class="bg-header-work bg-cover lg:h-[490px] h-[220px]">
+      <div class="bg-black/40 lg:h-[490px] h-[220px]">
         <main class="mx-auto xl:max-w-7xl lg:max-w-5xl font-maven-pro">
-          <div class="lg:px-12 px-4">
-            <h1 class="text-7xl text-white pt-48 mx-3">Work</h1>
-            <div class="bg-white h-96 rounded-lg mt-2 p-4 font-asap">
-              <p class="text-[20px]">
+          <div class="lg:px-10">
+            <h1
+              class="
+                lg:text-7xl
+                text-[2rem] text-white
+                lg:pt-48
+                pt-[7.8rem]
+                mx-3
+              "
+            >
+              Work
+            </h1>
+            <div class="bg-white h-96 lg:rounded-lg lg:mt-2 py-4 font-asap">
+              <p class="text-[20px] px-4">
                 Developers ของเราทำงานโดยมีจุดประสงค์หลักเพื่อผลิตเว็บไซต์
                 ซอฟต์แวร์ หรือแอปพลิเคชัน โดยท่านสามารถ Customized
                 ได้ทั้งภาพลักษณ์ รูปแบบการทำงาน
@@ -14,7 +24,20 @@
                 เรายินดีให้คำแนะนำ และแก้ปัญหาของท่าน
                 เราภูมิใจและยินดีที่ได้เป็นส่วนหนึ่งของการเติบโตของท่าน
               </p>
-              <nav class="flex mt-10 mb-8 text-2xl">
+              <nav
+                class="
+                  flex
+                  mt-10
+                  lg:mb-8
+                  mb-2
+                  text-2xl
+                  lg:pb-0
+                  pb-1
+                  mx-4
+                  overflow-x-scroll
+                  whitespace-nowrap
+                "
+              >
                 <div v-for="val in navWork" :key="val.id" class="mr-6">
                   <span
                     class="cursor-pointer"
@@ -24,20 +47,29 @@
                   >
                 </div>
               </nav>
-
               <div v-if="type === 'WEB'">
-                <div class="grid grid-cols-2 gap-8 px-1">
+                <div
+                  class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1"
+                >
                   <div v-for="img in imgWeb" :key="img.id">
                     <img
                       :src="img.url"
                       :alt="img.name"
-                      class="w-full h-[344px] object-cover rounded-2xl"
+                      class="
+                        w-full
+                        lg:h-[344px]
+                        h-[160px]
+                        object-cover
+                        rounded-2xl
+                      "
                     />
                   </div>
                 </div>
               </div>
               <div v-else-if="type === 'MOBILE APP'">
-                <div class="grid grid-cols-2 gap-8 px-1">
+                <div
+                  class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1"
+                >
                   <div v-for="img in imgMobile" :key="img.id">
                     <img
                       :src="img.url"
@@ -48,7 +80,9 @@
                 </div>
               </div>
               <div v-else-if="type === 'INTERNAL SYSTEMS'">
-                <div class="grid grid-cols-2 gap-8 px-1">
+                <div
+                  class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1"
+                >
                   <div v-for="img in imgInternal" :key="img.id">
                     <img
                       :src="img.url"
@@ -59,7 +93,9 @@
                 </div>
               </div>
               <div v-else-if="type === 'IN HOUSE'">
-                <div class="grid grid-cols-2 gap-8 px-1">
+                <div
+                  class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1"
+                >
                   <div v-for="img in imgInHouse" :key="img.id">
                     <img
                       :src="img.url"
@@ -70,7 +106,9 @@
                 </div>
               </div>
               <div v-else-if="type === 'BRANDING'">
-                <div class="grid grid-cols-2 gap-8 px-1">
+                <div
+                  class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1"
+                >
                   <div v-for="img in imgBranding" :key="img.id">
                     <img
                       :src="img.url"
@@ -85,7 +123,7 @@
         </main>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>

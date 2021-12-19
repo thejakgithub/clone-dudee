@@ -1,11 +1,23 @@
 <template>
-  <main class="h-screen bg-white">
-    <div class="bg-header-blog bg-cover h-[490px]">
-      <div class="bg-black/40 h-[490px]">
+  <main class="lg:h-screen h-[20rem] bg-white">
+    <div class="bg-header-blog bg-cover lg:h-[490px] h-[220px]">
+      <div class="bg-black/40 lg:h-[490px] h-[220px]">
         <main class="mx-auto xl:max-w-7xl lg:max-w-5xl font-maven-pro">
-          <div class="lg:px-10 px-4">
-            <h1 class="text-7xl text-white pt-48 mx-4">Blog / Post</h1>
-            <div class="bg-white h-96 rounded-lg mt-2 p-4 font-asap"></div>
+          <div class="lg:px-10">
+            <h1
+              class="
+                lg:text-7xl
+                text-[2rem] text-white
+                lg:pt-48
+                pt-[7.8rem]
+                mx-3
+              "
+            >
+              Blog / Post
+            </h1>
+            <div
+              class="bg-white h-96 lg:rounded-lg lg:mt-2 p-4 font-asap"
+            ></div>
           </div>
         </main>
       </div>

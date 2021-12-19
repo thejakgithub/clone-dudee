@@ -1,11 +1,21 @@
 <template>
-  <main class="h-screen bg-white">
-    <div class="bg-header-job bg-cover h-[490px]">
-      <div class="bg-black/40 h-[490px]">
+  <main class="lg:h-screen h-[37rem] bg-white">
+    <div class="bg-header-job bg-cover lg:h-[490px] h-[220px]">
+      <div class="bg-black/40 lg:h-[490px] h-[220px]">
         <main class="mx-auto xl:max-w-7xl lg:max-w-5xl font-maven-pro">
-          <div class="lg:px-12 px-4">
-            <h1 class="text-7xl text-white pt-48 mx-3">Jobs</h1>
-            <div class="bg-white h-96 rounded-lg mt-2 p-4 font-asap">
+          <div class="lg:px-12">
+            <h1
+              class="
+                lg:text-7xl
+                text-[2rem] text-white
+                lg:pt-48
+                pt-[7.8rem]
+                mx-3
+              "
+            >
+              Jobs
+            </h1>
+            <div class="bg-white h-96 lg:rounded-lg lg:mt-2 p-4 font-asap">
               <div class="bg-[#eeee] rounded-lg flex justify-between p-4">
                 <div>
                   <p class="mb-4">Front - End Developer</p>
@@ -38,9 +48,13 @@
                   <p>2 ตำแหน่ง</p>
                 </div>
               </div>
-              <div class="mt-10">
-                <h1 class="font-maven-pro text-7xl">Internship Program</h1>
-                <p class="text-[32px] text-[#af0000] mt-5">Coming Soon...</p>
+              <div class="lg:mt-10 mt-6">
+                <h1 class="font-maven-pro lg:text-7xl text-[2rem]">
+                  Internship Program
+                </h1>
+                <p class="lg:text-[32px] text-base text-[#af0000] lg:mt-5">
+                  Coming Soon...
+                </p>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 <template>
   <nav class="bg-black/50 fixed w-full top-0 z-10">
     <div class="mx-auto xl:max-w-7xl lg:max-w-5xl">
-      <div class="md:ml-16 md:mr-12 ml-4 py-4">
+      <div class="lg:ml-16 lg:mr-12 ml-4 py-4">
         <div class="flex justify-between">
           <router-link to="/"
             ><img
@@ -12,9 +12,15 @@
               height="48"
           /></router-link>
           <div class="flex items-center">
-            <font-awesome-icon
+            <Font-awesome-icon
               :icon="['fas', 'bars']"
-              class="text-4xl mr-4 md:hidden text-dudee-green cursor-pointer"
+              class="
+                text-[2.5rem]
+                mr-4
+                md:hidden
+                text-dudee-green
+                cursor-pointer
+              "
             />
           </div>
           <div class="text-white md:flex md:items-center hidden">
