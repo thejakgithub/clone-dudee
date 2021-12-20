@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:h-screen bg-white">
+  <div class="bg-white">
     <img
       src="../assets/img/header-job.jpeg"
       alt="header-contact"
