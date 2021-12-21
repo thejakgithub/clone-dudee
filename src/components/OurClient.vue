@@ -36,7 +36,11 @@
     <div
       class="bg-white w-full absolute lg:h-[130px] z-0 -translate-y-[130px]"
     ></div>
-    <Carousel class="lg:hidden bg-white pt-4 pb-3" :autoplay="4000">
+    <Carousel
+      class="lg:hidden bg-white pt-4 pb-3"
+      :autoplay="4000"
+      :wrapAround="true"
+    >
       <Slide v-for="slide in items" :key="slide">
         <div class="carousel__item">
           <img :src="getImageUrl(slide)" class="h-[140px]" :alt="slide" />

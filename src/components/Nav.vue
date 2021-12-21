@@ -21,7 +21,7 @@
                 text-dudee-green
                 cursor-pointer
               "
-              @click="navClicked"
+              @click.prevent="navClicked"
             />
           </div>
           <div class="text-white md:flex md:items-center hidden">

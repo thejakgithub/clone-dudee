@@ -35,6 +35,7 @@
             consulting and technology solution.
           </p>
           <button
+            type="button"
             @click="whatWeDoClicked"
             class="
               text-white

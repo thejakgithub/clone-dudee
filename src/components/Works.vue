@@ -117,10 +117,10 @@
     class="lg:hidden inline-block"
   >
     <Slide v-for="slide in items" :key="slide">
-      <div class="carousel__item">
+      <div class="carousel__item h-[275px]">
         <img
           :src="getImageUrl(slide)"
-          class="object-cover h-[275px] max-w-full w-screen"
+          class="object-cover h-full max-w-full w-screen"
           :alt="slide"
         />
       </div>
