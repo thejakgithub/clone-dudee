@@ -54,7 +54,9 @@ h3 {
   width: 10px;
   border-radius: 100%;
 }
-
+.carousel__slide {
+  align-items: flex-start;
+}
 .carousel__pagination-item {
   margin: 0 5px;
 }

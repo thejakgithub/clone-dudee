@@ -12,7 +12,7 @@
           :autoplay="3000"
           :transition="1000"
           :mouse-drag="false"
-          class="pointer-events-none select-none lg:mt-24 mt-10"
+          class="pointer-events-none select-none lg:mt-24 mt-16"
         >
           <Slide :key="slide">
             <div class="carousel__item">
@@ -167,9 +167,5 @@ export default {
 .carousel__slide--visible > .carousel__item {
   opacity: 1;
   transition: 2s;
-}
-
-.carousel__track {
-  align-items: flex-start;
 }
 </style>
