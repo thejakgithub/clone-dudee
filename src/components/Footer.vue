@@ -3,33 +3,40 @@
     <div class="mx-auto xl:max-w-7xl lg:max-w-5xl">
       <div class="md:px-16 px-4 py-8">
         <div
-          class="grid grid-cols-[1.8fr_1.2fr_1fr_1.4fr] mb-5 gap-x-6 text-white"
+          class="
+            lg:grid
+            grid-cols-[1.8fr_1.2fr_1fr_1.4fr]
+            mb-5
+            gap-x-6
+            text-white
+          "
         >
           <p class="text-2xl col-start-1">Contact Infomation</p>
-          <p class="text-2xl col-start-4">Work With Us</p>
+          <p class="lg:inline-block hidden text-2xl col-start-4">
+            Work With Us
+          </p>
         </div>
-        <div class="grid grid-cols-[1.8fr_1.2fr_1fr_1.4fr] gap-x-6 text-white">
-          <div>
+        <div
+          class="lg:grid grid-cols-[1.8fr_1.2fr_1fr_1.4fr] gap-x-6 text-white"
+        >
+          <div class="mb-5">
             <p>Address</p>
-            <p class="text-dudee-green text-[13.6px] md:text-base">
+            <p class="text-dudee-green">
               187/24 Chang Klan Road, Muang Chiang Mai District, Chiang Mai,
               50100
             </p>
           </div>
-          <div>
+          <div class="mb-5">
             <p>Email</p>
-            <p class="text-dudee-green text-[13.6px] md:text-base">
-              contact@dudee-indeed.com
-            </p>
+            <p class="text-dudee-green">contact@dudee-indeed.com</p>
           </div>
-          <div>
+          <div class="mb-5">
             <p>Tel</p>
-            <p class="text-dudee-green text-[13.6px] md:text-base">
-              062-508-7576
-            </p>
+            <p class="text-dudee-green">062-508-7576</p>
           </div>
           <div>
-            <p class="text-dudee-green text-[13.6px] md:text-base">Job</p>
+            <p class="lg:hidden">Work With Us</p>
+            <p class="text-dudee-green">Job</p>
           </div>
         </div>
         <div class="text-center text-dudee-green mt-12">

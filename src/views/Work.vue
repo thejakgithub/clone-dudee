@@ -66,56 +66,191 @@
           </nav>
           <div v-if="type === 'WEB'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgWeb" :key="img.id">
+              <div v-for="img in imgWeb" :key="img.id" class="relative">
+                <div
+                  class="
+                    lg:hidden
+                    bg-gradient-to-b
+                    from-transparent
+                    via-transparent
+                    to-black/80
+                    w-full
+                    absolute
+                    z-10
+                    h-[160px]
+                    rounded-2xl
+                  "
+                ></div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
                   class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
                 />
+                <div
+                  class="
+                    absolute
+                    left-4
+                    bottom-9
+                    text-white
+                    font-bold
+                    z-20
+                    lg:hidden
+                  "
+                >
+                  <span>{{ img.name }}</span>
+                </div>
               </div>
             </div>
           </div>
           <div v-else-if="type === 'MOBILE APP'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgMobile" :key="img.id">
+              <div v-for="img in imgMobile" :key="img.id" class="relative">
+                <div
+                  class="
+                    lg:hidden
+                    bg-gradient-to-b
+                    from-transparent
+                    via-transparent
+                    to-black/80
+                    w-full
+                    absolute
+                    z-10
+                    h-[160px]
+                    rounded-2xl
+                  "
+                ></div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
                   class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
                 />
+                <div
+                  class="
+                    absolute
+                    left-4
+                    bottom-9
+                    text-white
+                    font-bold
+                    z-20
+                    lg:hidden
+                  "
+                >
+                  <span>{{ img.name }}</span>
+                </div>
               </div>
             </div>
           </div>
           <div v-else-if="type === 'INTERNAL SYSTEMS'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgInternal" :key="img.id">
+              <div v-for="img in imgInternal" :key="img.id" class="relative">
+                <div
+                  class="
+                    lg:hidden
+                    bg-gradient-to-b
+                    from-transparent
+                    via-transparent
+                    to-black/80
+                    w-full
+                    absolute
+                    z-10
+                    h-[160px]
+                    rounded-2xl
+                  "
+                ></div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
                   class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
                 />
+                <div
+                  class="
+                    absolute
+                    left-4
+                    bottom-9
+                    text-white
+                    font-bold
+                    z-20
+                    lg:hidden
+                  "
+                >
+                  <span>{{ img.name }}</span>
+                </div>
               </div>
             </div>
           </div>
           <div v-else-if="type === 'IN HOUSE'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgInHouse" :key="img.id">
+              <div v-for="img in imgInHouse" :key="img.id" class="relative">
+                <div
+                  class="
+                    lg:hidden
+                    bg-gradient-to-b
+                    from-transparent
+                    via-transparent
+                    to-black/80
+                    w-full
+                    absolute
+                    z-10
+                    h-[160px]
+                    rounded-2xl
+                  "
+                ></div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
                   class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
                 />
+                <div
+                  class="
+                    absolute
+                    left-4
+                    bottom-9
+                    text-white
+                    font-bold
+                    z-20
+                    lg:hidden
+                  "
+                >
+                  <span>{{ img.name }}</span>
+                </div>
               </div>
             </div>
           </div>
           <div v-else-if="type === 'BRANDING'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgBranding" :key="img.id">
+              <div v-for="img in imgBranding" :key="img.id" class="relative">
+                <div
+                  class="
+                    lg:hidden
+                    bg-gradient-to-b
+                    from-transparent
+                    via-transparent
+                    to-black/80
+                    w-full
+                    absolute
+                    z-10
+                    h-[160px]
+                    rounded-2xl
+                  "
+                ></div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
                   class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
                 />
+                <div
+                  class="
+                    absolute
+                    left-4
+                    bottom-9
+                    text-white
+                    font-bold
+                    z-20
+                    lg:hidden
+                  "
+                >
+                  <span>{{ img.name }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -197,7 +332,7 @@ export default {
         },
         {
           id: 8,
-          name: "MY SPA BOOKING",
+          name: "My Spa Booking",
           url: "my_spa_booking.jpeg",
         },
         {
@@ -212,7 +347,7 @@ export default {
         },
         {
           id: 11,
-          name: "POMBALL STUDIO",
+          name: "pommball Studio",
           url: "pommball_studio.jpeg",
         },
         {
@@ -222,12 +357,12 @@ export default {
         },
         {
           id: 13,
-          name: "BACK PACK",
+          name: "BackPack",
           url: "backpack.jpeg",
         },
         {
           id: 14,
-          name: "SANDY PURE & CLEAN",
+          name: "Sandy Pure & Clean",
           url: "sandy_pure.jpeg",
         },
       ],
