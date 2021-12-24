@@ -64,313 +64,65 @@
               >
             </div>
           </nav>
-          <div v-if="type === 'WEB'">
-            <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
+
+          <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
+            <div
+              v-for="img in images"
+              v-show="img.type.includes(type)"
+              :key="img.id"
+              class="relative cursor-pointer"
+            >
               <div
-                v-for="img in imgWeb"
-                :key="img.id"
-                class="relative cursor-pointer"
+                class="
+                  lg:hidden
+                  bg-gradient-to-b
+                  from-transparent
+                  via-transparent
+                  to-black/80
+                  w-full
+                  absolute
+                  z-10
+                  h-[160px]
+                  rounded-2xl
+                "
+              ></div>
+              <div
+                class="
+                  hover:bg-black/50
+                  opacity-0
+                  hover:opacity-100
+                  h-[344px]
+                  absolute
+                  z-10
+                  lg:flex
+                  hidden
+                  justify-center
+                  items-center
+                  text-white text-[28px]
+                  rounded-2xl
+                  w-[105%]
+                  duration-500
+                "
               >
-                <div
-                  class="
-                    lg:hidden
-                    bg-gradient-to-b
-                    from-transparent
-                    via-transparent
-                    to-black/80
-                    w-full
-                    absolute
-                    z-10
-                    h-[160px]
-                    rounded-2xl
-                  "
-                ></div>
-                <div
-                  class="
-                    hover:bg-black/50
-                    opacity-0
-                    hover:opacity-100
-                    h-[344px]
-                    absolute
-                    z-10
-                    lg:flex
-                    hidden
-                    justify-center
-                    items-center
-                    text-white text-[28px]
-                    rounded-2xl
-                    w-[105%]
-                    duration-500
-                  "
-                >
-                  {{ img.name }}
-                </div>
-                <img
-                  :src="getImageUrl(img.url)"
-                  :alt="img.name"
-                  class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
-                />
-                <div
-                  class="
-                    absolute
-                    left-4
-                    bottom-9
-                    text-white
-                    font-bold
-                    z-20
-                    lg:hidden
-                  "
-                >
-                  <span>{{ img.name }}</span>
-                </div>
+                {{ img.name }}
               </div>
-            </div>
-          </div>
-          <div v-else-if="type === 'MOBILE APP'">
-            <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
+              <img
+                :src="getImageUrl(img.url)"
+                :alt="img.name"
+                class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
+              />
               <div
-                v-for="img in imgMobile"
-                :key="img.id"
-                class="relative cursor-pointer"
+                class="
+                  absolute
+                  left-4
+                  bottom-9
+                  text-white
+                  font-bold
+                  z-20
+                  lg:hidden
+                "
               >
-                <div
-                  class="
-                    lg:hidden
-                    bg-gradient-to-b
-                    from-transparent
-                    via-transparent
-                    to-black/80
-                    w-full
-                    absolute
-                    z-10
-                    h-[160px]
-                    rounded-2xl
-                  "
-                ></div>
-                <div
-                  class="
-                    hover:bg-black/50
-                    opacity-0
-                    hover:opacity-100
-                    h-[344px]
-                    absolute
-                    z-10
-                    lg:flex
-                    hidden
-                    justify-center
-                    items-center
-                    text-white text-[28px]
-                    rounded-2xl
-                    w-[105%]
-                    duration-500
-                  "
-                >
-                  {{ img.name }}
-                </div>
-                <img
-                  :src="getImageUrl(img.url)"
-                  :alt="img.name"
-                  class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
-                />
-                <div
-                  class="
-                    absolute
-                    left-4
-                    bottom-9
-                    text-white
-                    font-bold
-                    z-20
-                    lg:hidden
-                  "
-                >
-                  <span>{{ img.name }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div v-else-if="type === 'INTERNAL SYSTEMS'">
-            <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div
-                v-for="img in imgInternal"
-                :key="img.id"
-                class="relative cursor-pointer"
-              >
-                <div
-                  class="
-                    lg:hidden
-                    bg-gradient-to-b
-                    from-transparent
-                    via-transparent
-                    to-black/80
-                    w-full
-                    absolute
-                    z-10
-                    h-[160px]
-                    rounded-2xl
-                  "
-                ></div>
-                <div
-                  class="
-                    hover:bg-black/50
-                    opacity-0
-                    hover:opacity-100
-                    h-[344px]
-                    absolute
-                    z-10
-                    lg:flex
-                    hidden
-                    justify-center
-                    items-center
-                    text-white text-[28px]
-                    rounded-2xl
-                    w-[105%]
-                    duration-500
-                  "
-                >
-                  {{ img.name }}
-                </div>
-                <img
-                  :src="getImageUrl(img.url)"
-                  :alt="img.name"
-                  class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
-                />
-                <div
-                  class="
-                    absolute
-                    left-4
-                    bottom-9
-                    text-white
-                    font-bold
-                    z-20
-                    lg:hidden
-                  "
-                >
-                  <span>{{ img.name }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div v-else-if="type === 'IN HOUSE'">
-            <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div
-                v-for="img in imgInHouse"
-                :key="img.id"
-                class="relative cursor-pointer"
-              >
-                <div
-                  class="
-                    lg:hidden
-                    bg-gradient-to-b
-                    from-transparent
-                    via-transparent
-                    to-black/80
-                    w-full
-                    absolute
-                    z-10
-                    h-[160px]
-                    rounded-2xl
-                  "
-                ></div>
-                <div
-                  class="
-                    hover:bg-black/50
-                    opacity-0
-                    hover:opacity-100
-                    h-[344px]
-                    absolute
-                    z-10
-                    lg:flex
-                    hidden
-                    justify-center
-                    items-center
-                    text-white text-[28px]
-                    rounded-2xl
-                    w-[105%]
-                    duration-500
-                  "
-                >
-                  {{ img.name }}
-                </div>
-                <img
-                  :src="getImageUrl(img.url)"
-                  :alt="img.name"
-                  class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
-                />
-                <div
-                  class="
-                    absolute
-                    left-4
-                    bottom-9
-                    text-white
-                    font-bold
-                    z-20
-                    lg:hidden
-                  "
-                >
-                  <span>{{ img.name }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div v-else-if="type === 'BRANDING'">
-            <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div
-                v-for="img in imgBranding"
-                :key="img.id"
-                class="relative cursor-pointer"
-              >
-                <div
-                  class="
-                    lg:hidden
-                    bg-gradient-to-b
-                    from-transparent
-                    via-transparent
-                    to-black/80
-                    w-full
-                    absolute
-                    z-10
-                    h-[160px]
-                    rounded-2xl
-                  "
-                ></div>
-                <div
-                  class="
-                    hover:bg-black/50
-                    opacity-0
-                    hover:opacity-100
-                    h-[344px]
-                    absolute
-                    z-10
-                    lg:flex
-                    hidden
-                    justify-center
-                    items-center
-                    text-white text-[28px]
-                    rounded-2xl
-                    w-[105%]
-                    duration-500
-                  "
-                >
-                  {{ img.name }}
-                </div>
-                <img
-                  :src="getImageUrl(img.url)"
-                  :alt="img.name"
-                  class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
-                />
-                <div
-                  class="
-                    absolute
-                    left-4
-                    bottom-9
-                    text-white
-                    font-bold
-                    z-20
-                    lg:hidden
-                  "
-                >
-                  <span>{{ img.name }}</span>
-                </div>
+                <span>{{ img.name }}</span>
               </div>
             </div>
           </div>
@@ -414,119 +166,108 @@ export default {
           isActive: false,
         },
       ],
-      imgWeb: [
+      images: [
         {
           id: 1,
           name: "POS",
           url: "pos.jpeg",
+          type: ["WEB", "INTERNAL SYSTEMS", "IN HOUSE"],
         },
         {
           id: 2,
           name: "BLANK STUDIO",
           url: "blank_studio.jpeg",
+          type: ["WEB"],
         },
         {
           id: 3,
           name: "DEPARTMENT OF CONSULAR AFFAIRS",
           url: "department.jpeg",
+          type: ["WEB"],
         },
         {
           id: 4,
           name: "CLICK GLASSES STORE",
           url: "glasses_store.jpeg",
+          type: ["WEB"],
         },
         {
           id: 5,
           name: "BEST INC. HATYAI BRANCH",
           url: "hatyai_branch.jpeg",
+          type: ["WEB", "INTERNAL SYSTEMS"],
         },
         {
           id: 6,
           name: "IS AM ARE ACADEMY",
           url: "is_am_are.jpeg",
+          type: ["WEB", "BRANDING"],
         },
         {
           id: 7,
           name: "WONDERWALL HOTEL",
           url: "wonderwall_hotel.jpeg",
+          type: ["WEB"],
         },
         {
           id: 8,
           name: "My Spa Booking",
           url: "my_spa_booking.jpeg",
+          type: ["WEB"],
         },
         {
           id: 9,
           name: "ROOJAI",
           url: "roojai.jpeg",
+          type: ["WEB"],
         },
         {
           id: 10,
           name: "OMISE",
           url: "omise.png",
+          type: ["WEB"],
         },
         {
           id: 11,
           name: "pommball Studio",
           url: "pommball_studio.jpeg",
+          type: ["WEB"],
         },
         {
           id: 12,
           name: "SO:ME",
           url: "some.png",
+          type: ["WEB"],
         },
         {
           id: 13,
           name: "BackPack",
           url: "backpack.jpeg",
+          type: ["WEB"],
         },
         {
           id: 14,
           name: "Sandy Pure & Clean",
           url: "sandy_pure.jpeg",
+          type: ["WEB"],
         },
-      ],
-      imgMobile: [
         {
-          id: 1,
+          id: 15,
           name: "DONATE-MI",
           url: "donate_mi.jpeg",
+          type: ["MOBILE APP"],
         },
         {
-          id: 2,
+          id: 16,
           name: "ANGRY TEACHER",
           url: "angry_teacher.jpeg",
+          type: ["MOBILE APP"],
         },
         {
-          id: 3,
+          id: 17,
           name: "OK INFINITY",
           url: "ok_infinity.jpeg",
-        },
-      ],
-      imgInternal: [
-        {
-          id: 1,
-          name: "POS",
-          url: "pos.jpeg",
-        },
-        {
-          id: 2,
-          name: "BEST INC. HATYAI BRANCH",
-          url: "hatyai_branch.jpeg",
-        },
-      ],
-      imgInHouse: [
-        {
-          id: 1,
-          name: "POS",
-          url: "pos.jpeg",
-        },
-      ],
-      imgBranding: [
-        {
-          id: 1,
-          name: "IS AM ARE ACADEMY",
-          url: "is_am_are.jpeg",
+          type: ["MOBILE APP"],
         },
       ],
     };
