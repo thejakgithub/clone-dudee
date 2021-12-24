@@ -46,7 +46,7 @@
         >
           <div class="w-2/4 pr-5">
             <img
-              src="../assets/img/pos.jpeg"
+              :src="getImageUrl(showWorks.url)"
               alt="pos"
               class="
                 w-full
@@ -57,10 +57,9 @@
                 object-cover
               "
             />
-            <h2 class="font-maven-pro my-5">POS</h2>
+            <h2 class="font-maven-pro my-5">{{ showWorks.name }}</h2>
             <p class="font-semibold text-base font-maven-pro mb-7">
-              POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale
-              ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักกา...
+              {{ showWorks.description }}
             </p>
             <button
               class="
@@ -85,23 +84,25 @@
             </button>
           </div>
           <div
-            class="
-              w-2/4
-              grid grid-cols-2
-              gap-7
-              px-2
-              pointer-events-none
-              select-none
-              grid-rows-3
-            "
+            class="w-2/4 grid grid-cols-2 gap-7 px-2 select-none grid-rows-3"
           >
-            <img
-              v-for="img in items"
+            <div
+              v-for="img in images"
               :key="img.id"
-              :src="getImageUrl(img)"
-              :alt="img"
-              class="w-full h-full object-cover rounded-lg"
-            />
+              @click="changeImgWorks(img)"
+            >
+              <img
+                :src="getImageUrl(img.url)"
+                :alt="img.url"
+                class="
+                  w-full
+                  h-full
+                  object-cover
+                  rounded-lg
+                  pointer-events-none
+                "
+              />
+            </div>
           </div>
         </div>
         <!--  -->
@@ -116,12 +117,12 @@
     :items-to-show="1"
     class="lg:hidden inline-block"
   >
-    <Slide v-for="slide in items" :key="slide">
+    <Slide v-for="img in images" :key="img">
       <div class="carousel__item h-[275px]">
         <img
-          :src="getImageUrl(slide)"
+          :src="getImageUrl(img.url)"
           class="object-cover h-full max-w-full w-screen"
-          :alt="slide"
+          :alt="img.url"
         />
       </div>
     </Slide>
@@ -145,19 +146,73 @@ export default {
   },
   data() {
     return {
-      items: [
-        "pos.jpeg",
-        "blank_studio.jpeg",
-        "department.jpeg",
-        "glasses_store.jpeg",
-        "hatyai_branch.jpeg",
-        "is_am_are.jpeg",
+      showHasan: true,
+      showWorks: {
+        id: 1,
+        name: "POS",
+        url: "pos.jpeg",
+        description:
+          "POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักกา...",
+      },
+      images: [
+        {
+          id: 1,
+          name: "POS",
+          url: "pos.jpeg",
+          description:
+            "POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักกา...",
+        },
+        {
+          id: 2,
+          name: "BLANK STUDIO",
+          url: "blank_studio.jpeg",
+          description:
+            "คอนเซ็ปของเว็บไซต์ คือ มินิมอล เราจึงออกแบบมาให้มีความเรียบง่าย เน้นการใช้งาน ลดทอนกราฟิกที่ไม่จำเป็...",
+        },
+        {
+          id: 3,
+          name: "DEPARTMENT OF CONSULAR AFFAIRS",
+          url: "department.jpeg",
+          description:
+            "การรับรองนิติกรณ์เอกสาร ประเภทการรับรองลายมือชื่อของผู้มีอำนาจในการลงนามในเอกสารของหน่วยงานต่างๆ นั้...",
+        },
+
+        {
+          id: 4,
+          name: "CLICK GLASSES STORE",
+          url: "glasses_store.jpeg",
+          description:
+            "คลิก กลาซซิส ต้องการนำความลงตัว ระหว่างสไตล์วินเทจ ที่ให้ความรู้สึกคลาสสิก เก่าแก่ มีคุณค่า มาผสมกับ...",
+        },
+        {
+          id: 5,
+          name: "BEST INC. HATYAI BRANCH",
+          url: "hatyai_branch.jpeg",
+          description:
+            "ระบบของ BEST Express สาขาหาดใหญ่ เราจัดทำเพื่อลดภาระงานของพนักงาน รวมทั้งติดตามสินค้าและการคิดค่าคอม...",
+        },
+        {
+          id: 6,
+          name: "IS AM ARE ACADEMY",
+          url: "is_am_are.jpeg",
+          description:
+            "เว็บไซต์ IS AM ARE ACADEMY เป็นแหล่งรวมความรู้เพื่อการพัฒนาศักยภาพและยกระดับภาษาอังกฤษ มีคอร์สภาษาอั...",
+        },
       ],
     };
   },
   methods: {
     getImageUrl(name) {
       return new URL(`../assets/img/${name}`, import.meta.url).href;
+    },
+
+    changeImgWorks(img) {
+      this.images.forEach((val) => {
+        if (val.id === img.id) {
+          console.log(img);
+          this.showWorks = img;
+        }
+      });
     },
   },
 };

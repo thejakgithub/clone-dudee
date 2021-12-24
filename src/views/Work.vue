@@ -66,7 +66,11 @@
           </nav>
           <div v-if="type === 'WEB'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgWeb" :key="img.id" class="relative">
+              <div
+                v-for="img in imgWeb"
+                :key="img.id"
+                class="relative cursor-pointer"
+              >
                 <div
                   class="
                     lg:hidden
@@ -81,6 +85,26 @@
                     rounded-2xl
                   "
                 ></div>
+                <div
+                  class="
+                    hover:bg-black/50
+                    opacity-0
+                    hover:opacity-100
+                    h-[344px]
+                    absolute
+                    z-10
+                    lg:flex
+                    hidden
+                    justify-center
+                    items-center
+                    text-white text-[28px]
+                    rounded-2xl
+                    w-[105%]
+                    duration-500
+                  "
+                >
+                  {{ img.name }}
+                </div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
@@ -104,7 +128,11 @@
           </div>
           <div v-else-if="type === 'MOBILE APP'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgMobile" :key="img.id" class="relative">
+              <div
+                v-for="img in imgMobile"
+                :key="img.id"
+                class="relative cursor-pointer"
+              >
                 <div
                   class="
                     lg:hidden
@@ -119,6 +147,26 @@
                     rounded-2xl
                   "
                 ></div>
+                <div
+                  class="
+                    hover:bg-black/50
+                    opacity-0
+                    hover:opacity-100
+                    h-[344px]
+                    absolute
+                    z-10
+                    lg:flex
+                    hidden
+                    justify-center
+                    items-center
+                    text-white text-[28px]
+                    rounded-2xl
+                    w-[105%]
+                    duration-500
+                  "
+                >
+                  {{ img.name }}
+                </div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
@@ -142,7 +190,11 @@
           </div>
           <div v-else-if="type === 'INTERNAL SYSTEMS'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgInternal" :key="img.id" class="relative">
+              <div
+                v-for="img in imgInternal"
+                :key="img.id"
+                class="relative cursor-pointer"
+              >
                 <div
                   class="
                     lg:hidden
@@ -157,6 +209,26 @@
                     rounded-2xl
                   "
                 ></div>
+                <div
+                  class="
+                    hover:bg-black/50
+                    opacity-0
+                    hover:opacity-100
+                    h-[344px]
+                    absolute
+                    z-10
+                    lg:flex
+                    hidden
+                    justify-center
+                    items-center
+                    text-white text-[28px]
+                    rounded-2xl
+                    w-[105%]
+                    duration-500
+                  "
+                >
+                  {{ img.name }}
+                </div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
@@ -180,7 +252,11 @@
           </div>
           <div v-else-if="type === 'IN HOUSE'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgInHouse" :key="img.id" class="relative">
+              <div
+                v-for="img in imgInHouse"
+                :key="img.id"
+                class="relative cursor-pointer"
+              >
                 <div
                   class="
                     lg:hidden
@@ -195,6 +271,26 @@
                     rounded-2xl
                   "
                 ></div>
+                <div
+                  class="
+                    hover:bg-black/50
+                    opacity-0
+                    hover:opacity-100
+                    h-[344px]
+                    absolute
+                    z-10
+                    lg:flex
+                    hidden
+                    justify-center
+                    items-center
+                    text-white text-[28px]
+                    rounded-2xl
+                    w-[105%]
+                    duration-500
+                  "
+                >
+                  {{ img.name }}
+                </div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
@@ -218,7 +314,11 @@
           </div>
           <div v-else-if="type === 'BRANDING'">
             <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-              <div v-for="img in imgBranding" :key="img.id" class="relative">
+              <div
+                v-for="img in imgBranding"
+                :key="img.id"
+                class="relative cursor-pointer"
+              >
                 <div
                   class="
                     lg:hidden
@@ -233,6 +333,26 @@
                     rounded-2xl
                   "
                 ></div>
+                <div
+                  class="
+                    hover:bg-black/50
+                    opacity-0
+                    hover:opacity-100
+                    h-[344px]
+                    absolute
+                    z-10
+                    lg:flex
+                    hidden
+                    justify-center
+                    items-center
+                    text-white text-[28px]
+                    rounded-2xl
+                    w-[105%]
+                    duration-500
+                  "
+                >
+                  {{ img.name }}
+                </div>
                 <img
                   :src="getImageUrl(img.url)"
                   :alt="img.name"
