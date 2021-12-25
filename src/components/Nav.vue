@@ -29,7 +29,11 @@
               v-for="val in navLink"
               :key="val.id"
               :to="val.link"
-              class="px-4 py-3 hover:bg-black hover:bg-opacity-5 hover:rounded"
+              class="
+                px-4
+                py-3
+                hover:bg-black hover:bg-opacity-5 hover:rounded-lg
+              "
               >{{ val.name }}</router-link
             >
           </div>
