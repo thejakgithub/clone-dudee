@@ -1,13 +1,13 @@
 <template>
-  <nav class="bg-black/50 fixed w-full top-0 z-10">
+  <nav :class="{ navbarWhite: navBarTheme, navbarDark: !navBarTheme }">
     <div class="mx-auto xl:max-w-7xl lg:max-w-5xl">
       <div class="lg:ml-16 lg:mr-12 ml-4 py-4">
         <div class="flex justify-between">
           <router-link to="/"
             ><img
-              class=""
-              src="../assets/img/logo.png"
-              alt="logo"
+              :class="{ 'brightness-0': navBarTheme }"
+              src="../assets/img/dudee-indeed.svg"
+              alt="dudee-indeed.svg"
               width="111"
               height="48"
           /></router-link>
@@ -24,7 +24,7 @@
               @click.prevent="navClicked"
             />
           </div>
-          <div class="text-white md:flex md:items-center hidden">
+          <div class="md:flex md:items-center hidden">
             <router-link
               v-for="val in navLink"
               :key="val.id"
@@ -118,6 +118,15 @@ export default {
       ],
     };
   },
+  computed: {
+    navBarTheme() {
+      if (this.$route.path === "/work/portfolio") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
   methods: {
     navClicked() {
       this.navIsActive = !this.navIsActive;
@@ -150,5 +159,22 @@ export default {
 .active {
   background: #ffffffb3;
   color: #000;
+}
+
+.navbarDark {
+  position: fixed;
+  background-color: rgb(0 0 0 / 0.5);
+  z-index: 50;
+  width: 100%;
+  top: 0;
+  color: #fff;
+}
+.navbarWhite {
+  position: fixed;
+  background-color: rgb(255 255 255 / 0.5);
+  color: #000;
+  z-index: 50;
+  width: 100%;
+  top: 0;
 }
 </style>

@@ -7,25 +7,27 @@
             <h1 class="lg:text-[4rem] text-3xl font-bold text-white mb-2">
               Works
             </h1>
-            <button
-              class="
-                hidden
-                lg:inline-block
-                h-[52px]
-                min-w-[92px]
-                font-bold font-maven-pro
-                select-none
-                rounded
-                tracking-widest
-                hover:opacity-95
-                border-none
-                px-6
-                text-base
-                cursor-pointer
-              "
-            >
-              SEE ALL WORKS
-            </button>
+            <router-link to="/work">
+              <button
+                class="
+                  hidden
+                  lg:inline-block
+                  h-[52px]
+                  min-w-[92px]
+                  font-bold font-maven-pro
+                  select-none
+                  rounded
+                  tracking-widest
+                  hover:opacity-95
+                  border-none
+                  px-6
+                  text-base
+                  cursor-pointer
+                "
+              >
+                SEE ALL WORKS
+              </button>
+            </router-link>
           </div>
         </div>
 
@@ -61,27 +63,29 @@
             <p class="font-semibold text-base font-maven-pro mb-7">
               {{ showWorks.description }}
             </p>
-            <button
-              class="
-                text-white
-                border-none
-                text-base
-                font-bold
-                bg-dudee-green
-                px-[1.4rem]
-                h-[52px]
-                min-w-[92px]
-                tracking-widest
-                font-maven-pro
-                rounded
-                shadow-gray-500 shadow
-                hover:bg-opacity-95
-                cursor-pointer
-                select-none
-              "
-            >
-              See More Detail
-            </button>
+            <router-link to="/work/portfolio">
+              <button
+                class="
+                  text-white
+                  border-none
+                  text-base
+                  font-bold
+                  bg-dudee-green
+                  px-[1.4rem]
+                  h-[52px]
+                  min-w-[92px]
+                  tracking-widest
+                  font-maven-pro
+                  rounded
+                  shadow-gray-500 shadow
+                  hover:bg-opacity-95
+                  cursor-pointer
+                  select-none
+                "
+              >
+                See More Detail
+              </button>
+            </router-link>
           </div>
           <div
             class="w-2/4 grid grid-cols-2 gap-7 px-2 select-none grid-rows-3"

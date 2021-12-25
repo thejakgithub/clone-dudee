@@ -5,6 +5,7 @@ import Blog from "../views/Blog.vue";
 import Work from "../views/Work.vue";
 import JobAndIntern from "../views/JobAndIntern.vue";
 import Contact from "../views/Contact.vue";
+import Portfolio from "../views/Portfolio.vue";
 
 const routes = [
   {
@@ -37,11 +38,19 @@ const routes = [
     name: "Contact",
     component: Contact,
   },
+  {
+    path: "/work/portfolio",
+    name: "Portfolio",
+    component: Portfolio,
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  },
 });
 
 export default router;
