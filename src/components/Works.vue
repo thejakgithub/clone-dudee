@@ -122,19 +122,19 @@
     :wrap-around="true"
     :transition="500"
     :items-to-show="1"
-    class="lg:hidden inline-block"
+    :mouse-drag="false"
+    class="lg:hidden"
   >
     <Slide v-for="item in workItems" :key="item">
-      <router-link
-        :to="{ name: 'Portfolio', params: { portId: item.id } }"
-        class="carousel__item h-[275px]"
-      >
-        <img
-          :src="getImageUrl(item.img[0])"
-          class="object-cover h-full max-w-full w-screen"
-          :alt="item.img"
-        />
-      </router-link>
+      <div class="carousel__item h-[275px]">
+        <router-link :to="{ name: 'Portfolio', params: { portId: item.id } }">
+          <img
+            :src="getImageUrl(item.img[0])"
+            class="object-cover h-full max-w-full w-screen"
+            :alt="item.img[0]"
+          />
+        </router-link>
+      </div>
     </Slide>
 
     <template #addons>
@@ -237,6 +237,7 @@ export default {
       ],
     };
   },
+  mounted() {},
   methods: {
     getImageUrl(name) {
       return new URL(`../assets/img/${name}`, import.meta.url).href;
