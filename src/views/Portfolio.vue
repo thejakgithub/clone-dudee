@@ -4,64 +4,63 @@
       <div class="lg:px-12">
         <div class="pt-[6.25rem]">
           <img
-            src="../assets/img/pos.jpeg"
-            alt="pos.jpeg"
+            :src="getImageUrl(showItem.img[0])"
+            :alt="showItem.img[0]"
             class="w-full h-[500px] object-cover object-left"
           />
         </div>
         <div class="mx-4 mt-6 font-asap">
-          <h1 class="text-[64px] font-maven-pro mb-4">POS</h1>
+          <h1 class="text-[64px] font-maven-pro mb-4"></h1>
           <div>
             <h1 class="text-[32px] mb-4">Our Customers</h1>
             <ul class="ml-6 text-2xl mb-4">
-              <li>Meesha</li>
+              <li
+                v-for="(ourCustomer, index) in showItem.ourCustomers"
+                :key="index"
+              >
+                {{ ourCustomer }}
+              </li>
             </ul>
           </div>
           <div>
             <h1 class="text-[32px] mb-4">Services</h1>
             <ul class="ml-6 text-2xl mb-4">
-              <li>Website</li>
-              <li>Internal Systems</li>
-              <li>In House Products</li>
+              <li v-for="(service, index) in showItem.services" :key="index">
+                {{ service }}
+              </li>
             </ul>
           </div>
           <div>
             <h1 class="text-[32px] mb-4">Features</h1>
             <ul class="ml-6 text-2xl mb-8">
-              <li>Menu & Ordering</li>
-              <li>Seat management</li>
-              <li>Billing & Payment</li>
-              <li>Kitchen management</li>
+              <li v-for="(feature, index) in showItem.features" :key="index">
+                {{ feature }}
+              </li>
             </ul>
           </div>
           <div class="mb-10">
             <p class="text-2xl">
-              POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale
-              ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักการของเครื่องคิดเงิน (Cash
-              Register) มาเขียนโปรแกรมพัฒนาบนคอมพิวเตอร์
-              แล้วเพิ่มเติมความสามารถต่างๆ ที่เครื่องเก็บเงินทำไม่ได้ ประกอบด้วย
-              ระบบจัดการเมนูและการสั่งซื้อ, ระบบจัดการโต๊ะที่นั่งภายในร้าน,
-              ระบบการจ่ายเงินและบิลเงินสด, ระบบจัดการครัว
+              {{ showItem.description }}
             </p>
           </div>
         </div>
         <div class="pb-5">
           <div class="flex">
             <img
-              src="../assets/img/pos_1.jpeg"
-              alt="pos_1.jpeg"
+              :src="getImageUrl(showItem.img[1])"
+              :alt="showItem.img[1]"
               class="w-2/4 max-h-[500px] object-cover"
             />
             <img
-              src="../assets/img/pos_2.jpeg"
-              alt="pos_2.jpeg"
+              :src="getImageUrl(showItem.img[2])"
+              :alt="showItem.img[2]"
               class="w-2/4 max-h-[500px] object-cover"
             />
           </div>
 
           <img
-            src="../assets/img/pos_3.jpeg"
-            alt="pos_3.jpeg"
+            :src="getImageUrl(showItem.img[3])"
+            :alt="showItem.img[3]"
             class="max-h-[500px] object-cover w-full mt-2"
           />
         </div>
@@ -76,6 +75,22 @@ export default {
 
   data() {
     return {
+      portId: this.$route.params.portId,
+      showItem: {
+        id: 1,
+        name: "POS",
+        img: ["pos.jpeg", "pos_1.jpeg", "pos_2.jpeg", "pos_3.jpeg"],
+        ourCustomers: ["Meesha"],
+        services: ["Website", "Internal Systems", "In House Products"],
+        features: [
+          "Menu & Ordering",
+          "Seat management",
+          "Billing & Payment",
+          "Kitchen management",
+        ],
+        description:
+          "POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักการของเครื่องคิดเงิน (Cash Register) มาเขียนโปรแกรมพัฒนาบนคอมพิวเตอร์ แล้วเพิ่มเติมความสามารถต่างๆ ที่เครื่องเก็บเงินทำไม่ได้ ประกอบด้วย ระบบจัดการเมนูและการสั่งซื้อ, ระบบจัดการโต๊ะที่นั่งภายในร้าน, ระบบการจ่ายเงินและบิลเงินสด, ระบบจัดการครัว",
+      },
       workItems: [
         {
           id: 1,
@@ -140,6 +155,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    getImageUrl(name) {
+      return new URL(`../assets/img/${name}`, import.meta.url).href;
+    },
   },
 };
 </script>

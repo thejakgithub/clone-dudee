@@ -116,6 +116,7 @@
     </div>
   </main>
   <!-- Mobile tablet -->
+
   <Carousel
     :autoplay="4000"
     :wrap-around="true"
@@ -124,14 +125,18 @@
     class="lg:hidden inline-block"
   >
     <Slide v-for="item in workItems" :key="item">
-      <div class="carousel__item h-[275px]">
+      <router-link
+        :to="{ name: 'Portfolio', params: { portId: item.id } }"
+        class="carousel__item h-[275px]"
+      >
         <img
           :src="getImageUrl(item.img[0])"
           class="object-cover h-full max-w-full w-screen"
           :alt="item.img"
         />
-      </div>
+      </router-link>
     </Slide>
+
     <template #addons>
       <Pagination class="bg-white h-24 flex items-center justify-center" />
     </template>
