@@ -39,7 +39,7 @@ const routes = [
     component: Contact,
   },
   {
-    path: "/work/portfolio",
+    path: "/work/portfolio/:portId",
     name: "Portfolio",
     component: Portfolio,
   },

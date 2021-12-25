@@ -8,117 +8,23 @@
         <Carousel
           :settings="settings"
           :breakpoints="breakpoints"
-          :wrap-around="[true]"
-          :autoplay="3000"
-          :transition="1000"
-          :mouse-drag="false"
           class="pointer-events-none select-none lg:mt-24 mt-16"
         >
-          <Slide :key="slide">
+          <Slide v-for="item in items" :key="item">
             <div class="carousel__item">
               <div class="font-extralight">
                 <div class="h-[100px]">
                   <img
-                    src="../assets/img/website.jpeg"
-                    alt="website"
+                    :src="getImageUrl(item.img)"
+                    :alt="item.img"
                     class="h-full"
                   />
                 </div>
 
-                <h3 class="py-6">WEBSITE</h3>
+                <h3 class="py-6">{{ item.title }}</h3>
                 <div>
                   <p>
-                    We can develop various type of website such as CMS website,
-                    Blogs, E-commerce website and WebApplication.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Slide>
-          <Slide :key="slide">
-            <div class="carousel__item">
-              <div class="font-extralight">
-                <div class="h-[100px]">
-                  <img
-                    src="../assets/img/moblie_app.jpeg"
-                    alt="moblie_app"
-                    class="h-full"
-                  />
-                </div>
-
-                <h3 class="py-6">MOBLIE APP</h3>
-                <div>
-                  <p>
-                    Mobile application is one solution to solving some business
-                    problem, Marketing, Entertainments, E-learning,
-                    Communication, etc.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Slide>
-          <Slide :key="slide">
-            <div class="carousel__item">
-              <div class="font-extralight">
-                <div class="h-[100px]">
-                  <img
-                    src="../assets/img/internal_systems.png"
-                    alt="internal_systems"
-                    class="h-full"
-                  />
-                </div>
-
-                <h3 class="py-6">INTERNAL SYSTEMS</h3>
-                <div>
-                  <p>
-                    Almost our Internal system project are based on client’s
-                    pain point. To solving those problems. We always use
-                    technology to apply to original workflow.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Slide>
-          <Slide :key="slide">
-            <div class="carousel__item">
-              <div class="font-extralight">
-                <div class="h-[100px]">
-                  <img
-                    src="../assets/img/inhouse_products.png"
-                    alt="inhouse_products"
-                    class="h-full"
-                  />
-                </div>
-                <h3 class="py-6">IN HOUSE PRODUCTS</h3>
-                <div>
-                  <p>
-                    stock management and pos(point of sale) are systems to help
-                    business increase productivity our product is a systematic
-                    approach to sourcing, storing, ordering, tracking,
-                    monitoring stock levels, and connect with POS machine for
-                    operating a retail establishment or other business
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Slide>
-          <Slide :key="slide">
-            <div class="carousel__item">
-              <div class="font-extralight">
-                <div class="h-[100px]">
-                  <img
-                    src="../assets/img/branding.png"
-                    alt="branding"
-                    class="h-full"
-                  />
-                </div>
-
-                <h3 class="py-6">BRANDING</h3>
-                <div>
-                  <p>
-                    Good branding increases the value of the company, mouse
-                    acquiring new customers. Corporate identity(CI), logo,
-                    color, font, printing, online template
+                    {{ item.description }}
                   </p>
                 </div>
               </div>
@@ -146,6 +52,10 @@ export default {
     settings: {
       itemsToShow: 1,
       snapAlign: "center",
+      wrapAround: true,
+      autoplay: 3000,
+      transition: 1000,
+      mouseDrag: false,
     },
     // breakpoints are mobile first
     // any settings not specified will fallback to the carousel settings
@@ -154,9 +64,55 @@ export default {
       768: {
         itemsToShow: 2.5,
         snapAlign: "center",
+        wrapAround: true,
+        autoplay: 3000,
+        transition: 1000,
+        mouseDrag: false,
       },
     },
+    items: [
+      {
+        id: 1,
+        img: "website.jpeg",
+        title: "WEBSITE",
+        description:
+          "We can develop various type of website such as CMS website, Blogs, E-commerce website and WebApplication.",
+      },
+      {
+        id: 2,
+        img: "moblie_app.jpeg",
+        title: "MOBLIE APP",
+        description:
+          "Mobile application is one solution to solving some business problem, Marketing, Entertainments, E-learning, Communication, etc.",
+      },
+      {
+        id: 3,
+        img: "internal_systems.png",
+        title: "INTERNAL SYSTEMS",
+        description:
+          "Almost our Internal system project are based on client’s pain point. To solving those problems. We always use technology to apply to original workflow.",
+      },
+      {
+        id: 4,
+        img: "inhouse_products.png",
+        title: "IN HOUSE PRODUCTS",
+        description:
+          "stock management and pos(point of sale) are systems to help business increase productivity our product is a systematic approach to sourcing, storing, ordering, tracking, monitoring stock levels, and connect with POS machine for operating a retail establishment or other business",
+      },
+      {
+        id: 5,
+        img: "branding.png",
+        title: "BRANDING",
+        description:
+          "Good branding increases the value of the company, mouse acquiring new customers. Corporate identity(CI), logo, color, font, printing, online template",
+      },
+    ],
   }),
+  methods: {
+    getImageUrl(name) {
+      return new URL(`../assets/img/${name}`, import.meta.url).href;
+    },
+  },
 };
 </script>
 

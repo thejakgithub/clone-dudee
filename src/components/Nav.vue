@@ -124,7 +124,7 @@ export default {
   },
   computed: {
     navBarTheme() {
-      if (this.$route.path === "/work/portfolio") {
+      if (this.$route.path.includes("/work/portfolio/")) {
         return true;
       } else {
         return false;

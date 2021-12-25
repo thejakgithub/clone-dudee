@@ -73,6 +73,74 @@
 <script>
 export default {
   name: "Portfolio",
+
+  data() {
+    return {
+      workItems: [
+        {
+          id: 1,
+          name: "POS",
+          img: ["pos.jpeg", "pos_1.jpeg", "pos_2.jpeg", "pos_3.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
+          features: [
+            "Menu & Ordering",
+            "Seat management",
+            "Billing & Payment",
+            "Kitchen management",
+          ],
+          description:
+            "POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักการของเครื่องคิดเงิน (Cash Register) มาเขียนโปรแกรมพัฒนาบนคอมพิวเตอร์ แล้วเพิ่มเติมความสามารถต่างๆ ที่เครื่องเก็บเงินทำไม่ได้ ประกอบด้วย ระบบจัดการเมนูและการสั่งซื้อ, ระบบจัดการโต๊ะที่นั่งภายในร้าน, ระบบการจ่ายเงินและบิลเงินสด, ระบบจัดการครัว",
+        },
+        {
+          id: 2,
+          name: "BLANK STUDIO",
+          img: ["blank_studio.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
+          description:
+            "คอนเซ็ปของเว็บไซต์ คือ มินิมอล เราจึงออกแบบมาให้มีความเรียบง่าย เน้นการใช้งาน ลดทอนกราฟิกที่ไม่จำเป็...",
+        },
+        {
+          id: 3,
+          name: "DEPARTMENT OF CONSULAR AFFAIRS",
+          img: ["department.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
+          description:
+            "การรับรองนิติกรณ์เอกสาร ประเภทการรับรองลายมือชื่อของผู้มีอำนาจในการลงนามในเอกสารของหน่วยงานต่างๆ นั้...",
+        },
+
+        {
+          id: 4,
+          name: "CLICK GLASSES STORE",
+          img: ["glasses_store.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
+          description:
+            "คลิก กลาซซิส ต้องการนำความลงตัว ระหว่างสไตล์วินเทจ ที่ให้ความรู้สึกคลาสสิก เก่าแก่ มีคุณค่า มาผสมกับ...",
+        },
+        {
+          id: 5,
+          name: "BEST INC. HATYAI BRANCH",
+          img: ["hatyai_branch.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
+          description:
+            "ระบบของ BEST Express สาขาหาดใหญ่ เราจัดทำเพื่อลดภาระงานของพนักงาน รวมทั้งติดตามสินค้าและการคิดค่าคอม...",
+        },
+        {
+          id: 6,
+          name: "IS AM ARE ACADEMY",
+          img: ["is_am_are.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
+          description:
+            "เว็บไซต์ IS AM ARE ACADEMY เป็นแหล่งรวมความรู้เพื่อการพัฒนาศักยภาพและยกระดับภาษาอังกฤษ มีคอร์สภาษาอั...",
+        },
+      ],
+    };
+  },
 };
 </script>
 

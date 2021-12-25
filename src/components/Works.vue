@@ -48,7 +48,7 @@
         >
           <div class="w-2/4 pr-5">
             <img
-              :src="getImageUrl(showWorks.url)"
+              :src="getImageUrl(showWorks.img[0])"
               alt="pos"
               class="
                 w-full
@@ -60,10 +60,12 @@
               "
             />
             <h2 class="font-maven-pro my-5">{{ showWorks.name }}</h2>
-            <p class="font-semibold text-base font-maven-pro mb-7">
-              {{ showWorks.description }}
+            <p class="font-bold text-base font-maven-pro mb-7">
+              {{ truncate(showWorks.description, 100, "...") }}
             </p>
-            <router-link to="/work/portfolio">
+            <router-link
+              :to="{ name: 'Portfolio', params: { portId: showWorks.id } }"
+            >
               <button
                 class="
                   text-white
@@ -91,13 +93,13 @@
             class="w-2/4 grid grid-cols-2 gap-7 px-2 select-none grid-rows-3"
           >
             <div
-              v-for="img in images"
-              :key="img.id"
-              @click="changeImgWorks(img)"
+              v-for="item in workItems"
+              :key="item.id"
+              @click="changeImgWorks(item)"
             >
               <img
-                :src="getImageUrl(img.url)"
-                :alt="img.url"
+                :src="getImageUrl(item.img[0])"
+                :alt="item.img"
                 class="
                   w-full
                   h-full
@@ -121,12 +123,12 @@
     :items-to-show="1"
     class="lg:hidden inline-block"
   >
-    <Slide v-for="img in images" :key="img">
+    <Slide v-for="item in workItems" :key="item">
       <div class="carousel__item h-[275px]">
         <img
-          :src="getImageUrl(img.url)"
+          :src="getImageUrl(item.img[0])"
           class="object-cover h-full max-w-full w-screen"
-          :alt="img.url"
+          :alt="item.img"
         />
       </div>
     </Slide>
@@ -150,33 +152,52 @@ export default {
   },
   data() {
     return {
-      showHasan: true,
       showWorks: {
         id: 1,
         name: "POS",
-        url: "pos.jpeg",
+        img: ["pos.jpeg", "pos_1.jpeg", "pos_2.jpeg", "pos_3.jpeg"],
+        ourCustomer: ["Meesha"],
+        services: ["Website", "Internal Systems", "In House Products"],
+        features: [
+          "Menu & Ordering",
+          "Seat management",
+          "Billing & Payment",
+          "Kitchen management",
+        ],
         description:
-          "POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักกา...",
+          "POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักการของเครื่องคิดเงิน (Cash Register) มาเขียนโปรแกรมพัฒนาบนคอมพิวเตอร์ แล้วเพิ่มเติมความสามารถต่างๆ ที่เครื่องเก็บเงินทำไม่ได้ ประกอบด้วย ระบบจัดการเมนูและการสั่งซื้อ, ระบบจัดการโต๊ะที่นั่งภายในร้าน, ระบบการจ่ายเงินและบิลเงินสด, ระบบจัดการครัว",
       },
-      images: [
+      workItems: [
         {
           id: 1,
           name: "POS",
-          url: "pos.jpeg",
+          img: ["pos.jpeg", "pos_1.jpeg", "pos_2.jpeg", "pos_3.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
+          features: [
+            "Menu & Ordering",
+            "Seat management",
+            "Billing & Payment",
+            "Kitchen management",
+          ],
           description:
-            "POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักกา...",
+            "POS คือ ระบบขายหน้าร้าน ชื่อเต็มของ POS คือ Point of sale ระบบจัดการร้านค้าให้มีประสิทธิภาพ นำหลักการของเครื่องคิดเงิน (Cash Register) มาเขียนโปรแกรมพัฒนาบนคอมพิวเตอร์ แล้วเพิ่มเติมความสามารถต่างๆ ที่เครื่องเก็บเงินทำไม่ได้ ประกอบด้วย ระบบจัดการเมนูและการสั่งซื้อ, ระบบจัดการโต๊ะที่นั่งภายในร้าน, ระบบการจ่ายเงินและบิลเงินสด, ระบบจัดการครัว",
         },
         {
           id: 2,
           name: "BLANK STUDIO",
-          url: "blank_studio.jpeg",
+          img: ["blank_studio.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
           description:
             "คอนเซ็ปของเว็บไซต์ คือ มินิมอล เราจึงออกแบบมาให้มีความเรียบง่าย เน้นการใช้งาน ลดทอนกราฟิกที่ไม่จำเป็...",
         },
         {
           id: 3,
           name: "DEPARTMENT OF CONSULAR AFFAIRS",
-          url: "department.jpeg",
+          img: ["department.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
           description:
             "การรับรองนิติกรณ์เอกสาร ประเภทการรับรองลายมือชื่อของผู้มีอำนาจในการลงนามในเอกสารของหน่วยงานต่างๆ นั้...",
         },
@@ -184,21 +205,27 @@ export default {
         {
           id: 4,
           name: "CLICK GLASSES STORE",
-          url: "glasses_store.jpeg",
+          img: ["glasses_store.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
           description:
             "คลิก กลาซซิส ต้องการนำความลงตัว ระหว่างสไตล์วินเทจ ที่ให้ความรู้สึกคลาสสิก เก่าแก่ มีคุณค่า มาผสมกับ...",
         },
         {
           id: 5,
           name: "BEST INC. HATYAI BRANCH",
-          url: "hatyai_branch.jpeg",
+          img: ["hatyai_branch.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
           description:
             "ระบบของ BEST Express สาขาหาดใหญ่ เราจัดทำเพื่อลดภาระงานของพนักงาน รวมทั้งติดตามสินค้าและการคิดค่าคอม...",
         },
         {
           id: 6,
           name: "IS AM ARE ACADEMY",
-          url: "is_am_are.jpeg",
+          img: ["is_am_are.jpeg"],
+          ourCustomer: ["Meesha"],
+          services: ["Website", "Internal Systems", "In House Products"],
           description:
             "เว็บไซต์ IS AM ARE ACADEMY เป็นแหล่งรวมความรู้เพื่อการพัฒนาศักยภาพและยกระดับภาษาอังกฤษ มีคอร์สภาษาอั...",
         },
@@ -210,13 +237,19 @@ export default {
       return new URL(`../assets/img/${name}`, import.meta.url).href;
     },
 
-    changeImgWorks(img) {
-      this.images.forEach((val) => {
-        if (val.id === img.id) {
-          console.log(img);
-          this.showWorks = img;
+    changeImgWorks(item) {
+      this.workItems.forEach((val) => {
+        if (val.id === item.id) {
+          this.showWorks = item;
         }
       });
+    },
+    truncate(text, length, suffix) {
+      if (text.length > length) {
+        return text.substring(0, length) + suffix;
+      } else {
+        return text;
+      }
     },
   },
 };

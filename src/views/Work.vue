@@ -66,10 +66,11 @@
           </nav>
 
           <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 lg:mx-4 px-1">
-            <div
+            <router-link
               v-for="img in images"
               v-show="img.type.includes(type)"
               :key="img.id"
+              :to="{ name: 'Portfolio', params: { portId: img.id } }"
               class="relative cursor-pointer"
             >
               <div
@@ -106,11 +107,13 @@
               >
                 {{ img.name }}
               </div>
+
               <img
                 :src="getImageUrl(img.url)"
                 :alt="img.name"
                 class="w-full lg:h-[344px] h-[160px] object-cover rounded-2xl"
               />
+
               <div
                 class="
                   absolute
@@ -124,7 +127,7 @@
               >
                 <span>{{ img.name }}</span>
               </div>
-            </div>
+            </router-link>
           </div>
         </div>
       </div>
