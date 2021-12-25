@@ -78,7 +78,7 @@
                   font-maven-pro
                   rounded
                   shadow-gray-500 shadow
-                  hover:bg-opacity-95
+                  hover:bg-opacity-90
                   cursor-pointer
                   select-none
                 "

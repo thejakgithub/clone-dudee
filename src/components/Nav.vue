@@ -93,7 +93,7 @@ export default {
         },
         {
           id: 3,
-          name: "Work",
+          name: "Works",
           isActive: false,
           link: "/work",
         },
