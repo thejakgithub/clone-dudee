@@ -21,6 +21,7 @@
                 text-dudee-green
                 cursor-pointer
               "
+              :class="{ 'brightness-0': navBarTheme }"
               @click.prevent="navClicked"
             />
           </div>
@@ -41,7 +42,11 @@
       </div>
     </div>
     <div
-      :class="{ nav_menu: navIsActive, nav_hidden: !navIsActive }"
+      :class="{
+        nav_menu: !navBarTheme,
+        nav_hidden: !navIsActive,
+        'bg-black/75 h-screen': navBarTheme,
+      }"
       class="md:hidden"
     >
       <div

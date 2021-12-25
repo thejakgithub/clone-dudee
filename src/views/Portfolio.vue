@@ -6,14 +6,22 @@
           <img
             :src="getImageUrl(showItem.img[0])"
             :alt="showItem.img[0]"
-            class="w-full h-[500px] object-cover object-left"
+            class="
+              w-full
+              lg:max-h-[500px]
+              h-[250px]
+              object-cover
+              lg:object-left
+            "
           />
         </div>
         <div class="mx-4 mt-6 font-asap">
-          <h1 class="text-[64px] font-maven-pro mb-4"></h1>
+          <h1 class="lg:text-[64px] text-[40px] font-maven-pro mb-4">
+            {{ showItem.name }}
+          </h1>
           <div>
             <h1 class="text-[32px] mb-4">Our Customers</h1>
-            <ul class="ml-6 text-2xl mb-4">
+            <ul class="ml-6 lg:text-2xl text-base mb-4">
               <li
                 v-for="(ourCustomer, index) in showItem.ourCustomers"
                 :key="index"
@@ -24,7 +32,7 @@
           </div>
           <div>
             <h1 class="text-[32px] mb-4">Services</h1>
-            <ul class="ml-6 text-2xl mb-4">
+            <ul class="ml-6 lg:text-2xl text-base mb-4">
               <li v-for="(service, index) in showItem.services" :key="index">
                 {{ service }}
               </li>
@@ -32,29 +40,29 @@
           </div>
           <div>
             <h1 class="text-[32px] mb-4">Features</h1>
-            <ul class="ml-6 text-2xl mb-8">
+            <ul class="ml-6 lg:text-2xl text-base mb-8">
               <li v-for="(feature, index) in showItem.features" :key="index">
                 {{ feature }}
               </li>
             </ul>
           </div>
           <div class="mb-10">
-            <p class="text-2xl">
+            <p class="lg:text-2xl text-base">
               {{ showItem.description }}
             </p>
           </div>
         </div>
-        <div class="pb-5">
-          <div class="flex">
+        <div class="pb-5 px-4 lg:px-0">
+          <div class="flex lg:flex-row flex-col">
             <img
               :src="getImageUrl(showItem.img[1])"
               :alt="showItem.img[1]"
-              class="w-2/4 max-h-[500px] object-cover"
+              class="lg:w-2/4 w-full max-h-[500px] object-cover"
             />
             <img
               :src="getImageUrl(showItem.img[2])"
               :alt="showItem.img[2]"
-              class="w-2/4 max-h-[500px] object-cover"
+              class="lg:w-2/4 w-full max-h-[500px] object-cover"
             />
           </div>
 
